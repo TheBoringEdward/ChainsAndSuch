@@ -16,6 +16,7 @@ public class Player {
         System.out.println("\n name = " + name);
         System.out.println("\n value = " + value);
         System.out.println("\n team = " + team);
+        System.out.println("\n Next...");
     }
 
     public String toString(){

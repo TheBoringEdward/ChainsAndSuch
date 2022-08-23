@@ -10,6 +10,11 @@ public class Node {
         next = null;
     }
 
+    Node(){
+        content = null;
+        next = null;
+    }
+
     public Node get_next(){
         return next;
     }
@@ -23,6 +28,16 @@ public class Node {
     }
 
     public void setContent(Player p) {
-        this.content = content;
+        this.content = p;
     }
+
+    public void print(){
+        content.print();
+    }
+
+    public String toString(){
+        String a = content.toString();
+        return a;
+    }
+
 }
