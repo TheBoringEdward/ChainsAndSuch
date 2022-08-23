@@ -52,9 +52,17 @@ public class List {
 
     public void remove(Player p){
         Node n = head;
-        while(n.getContent() != p){
+        Node n2 = head;
+        //Check if first is requested
+        //Check if player even exists
+        n = n.get_next();
+        while(n.getContent() != p){ //add additional tests
             n = n.get_next();
-        }
+            n2 = n2.get_next();
+        } // TODO: Fix this crap
+        //set next to be used here
+        // n wird gelöscht
+        // Nachfolger von n2 wird gesetzt auf den Nachfolger von n
         n.setContent(null);
     }
 
