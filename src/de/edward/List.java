@@ -12,6 +12,7 @@ public class List {
         return head.getContent();
     }
 
+    //Returns last Node
     public Node get_tail(){
         Node n = head;
         while( n.get_next() != null ) {
@@ -20,17 +21,20 @@ public class List {
         return n;
     }
 
+    //Returns last Player
     public Player get_last(){
         Node n = get_tail();
-        return n.getContent();
+        return n.getContent(); //Why don't we just combine get_last with get_tail? wtf?
     }
 
+    //Sets next Player of current Player
     public void append(Player p){
         Node n = get_tail();
         Node n2 = new Node(p);
         n.setNext(n2);
     }
 
+    //Prints out the entire List of Nodes/Players
     public void print(){
         Node n = head;
         while(n.get_next() != null){

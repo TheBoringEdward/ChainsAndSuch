@@ -15,26 +15,32 @@ public class Node {
         next = null;
     }
 
+    //Returns next Player of current Player
     public Node get_next(){
         return next;
     }
 
+    //Sets next Player of current Player
     public void setNext(Node next) {
         this.next = next;
     }
 
+    //Returns Player Content
     public Player getContent() {
         return content;
     }
 
+    //Sets Player Content
     public void setContent(Player p) {
         this.content = p;
     }
 
+    //Prints Player Content
     public void print(){
         content.print();
     }
 
+    //Builds String from Player Content
     public String toString(){
         String a = content.toString();
         return a;

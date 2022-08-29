@@ -12,6 +12,7 @@ public class Player {
         this.team = team;
     }
 
+    //Prints out Player information
     public void print(){
         System.out.println("\n name = " + name);
         System.out.println("\n value = " + value);
@@ -19,6 +20,7 @@ public class Player {
         System.out.println("\n Next...");
     }
 
+    //Builds String from Player information
     public String toString(){
         String a = name;
         a += " ";
@@ -28,23 +30,29 @@ public class Player {
         return a;
     }
 
+    //Sets Player Name
     public void setName(String name) {
         this.name = name;
     }
+    //Returns Player Name
     public String getName() {
         return name;
     }
 
+    //Sets Player Value
     public void setValue(double value) {
         this.value = value;
     }
+    //Returns Player Value
     public double getValue() {
         return value;
     }
 
+    //Sets Player Team
     public void setTeam(String team) {
         this.team = team;
     }
+    //Returns Player Team
     public String getTeam() {
         return team;
     }
