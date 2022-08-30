@@ -15,8 +15,8 @@ public class List {
     //Returns last Node
     public Node get_tail(){
         Node n = head;
-        while( n.get_next() != null ) {
-            n = n.get_next();
+        while( n.getNext() != null ) {
+            n = n.getNext();
         }
         return n;
     }
@@ -37,42 +37,73 @@ public class List {
     //Prints out the entire List of Nodes/Players
     public void print(){
         Node n = head;
-        while(n.get_next() != null){
+        while(n.getNext() != null){
             System.out.println("\n");
             n.print();
-            n = n.get_next();
+            n = n.getNext();
         }
     }
 
+    //Builds String from the entire List of Nodes/Player
     public String toString() {
         StringBuilder a = new StringBuilder();
         Node n = head;
-        while(n.get_next() != null){
+        while(n.getNext() != null){
             a.append("\n").append(n.toString());
-            n = n.get_next();
+            n = n.getNext();
         }
         return a.toString();
     }
+    /*
+    String a = "";
+    while(n.getnext() != null){
+        a = a + n.toString;
+    }
+    return a;
+     */
 
-    public void remove(Player p){
-        Node n = head;
-        Node n2 = head;
-        //Check if first is requested
+    //Remove selected Node/Player
+    public void remove(Player p) {
+        Node n = head; //Current Player to be deleted
+        Node pre_n = head; //Player/Node prior to n
         //Check if player even exists
-        n = n.get_next();
-        while(n.getContent() != p){ //add additional tests
-            n = n.get_next();
-            n2 = n2.get_next();
-        } // TODO: Fix this crap
-        //set next to be used here
-        // n wird gelöscht
-        // Nachfolger von n2 wird gesetzt auf den Nachfolger von n
-        n.setContent(null);
+        if (n.getContent() == p) {
+            head = n.getNext();
+        } else {
+            n = n.getNext();
+            while (n.getContent() != p && n.getNext() != null) {
+                n = n.getNext();
+                pre_n = pre_n.getNext();
+            }
+            if (n.getNext() != null) {
+                pre_n.setNext(n.getNext());
+                n.setContent(null);
+            }
+            //Else do nothing
+        }
     }
 
-    /*
-    public void insert_after( Player p, Player precessor )
-    public Boolean isEmpty()
-     */
+    public void insert_after( Player p, Player predecessor ) {
+        Node n = head;
+        Node newPlayer = new Node(p);
+
+        if (n.getContent() == predecessor) {
+            newPlayer.setNext(n.getNext());
+            n.setNext(newPlayer);
+        } else {
+            while (n.getContent() != predecessor && n.getNext() != null){
+                n = n.getNext();
+            }
+            if (n.getNext() != null){
+                newPlayer.setNext(n.getNext());
+                n.setNext(newPlayer);
+            }
+            //Else do nothing
+        }
+    }
+
+    public Boolean isEmpty(){
+        return head == null;
+    }
 
 }

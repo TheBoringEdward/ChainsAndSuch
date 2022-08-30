@@ -16,7 +16,7 @@ public class Node {
     }
 
     //Returns next Player of current Player
-    public Node get_next(){
+    public Node getNext(){
         return next;
     }
 
