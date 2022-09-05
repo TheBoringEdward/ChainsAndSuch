@@ -75,10 +75,14 @@ public class List {
     public String toString() {
         StringBuilder a = new StringBuilder();
         Node n = head;
+        if (n.getNext() != null){
+            n = n.getNext();
+        }
         while(n.getNext() != null){
             a.append("\n").append(n.toString());
             n = n.getNext();
         }
+        a.append("\n").append(n.toString());
         return a.toString();
     }
     /*
