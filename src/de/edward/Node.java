@@ -42,6 +42,7 @@ public class Node {
 
     //Builds String from Player Content
     public String toString(){
+        System.out.println(content);
         return content.toString();
     }
 

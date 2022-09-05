@@ -2,8 +2,8 @@ package de.edward;
 
 public class List {
 
-    private Node head;
-
+    private Node head;  //TODO: I am VERY sure we need to attach the head. Otherwise it will just remain decapitated.
+                        //We'd need an indefinite amount of nodes... How do I deal with that?!?
     List(){
         head = new Node();
     }
@@ -21,18 +21,45 @@ public class List {
         return n;
     }
 
+    public Node get_second(){ //TODO: Okay, smth is really fucked up rn...
+        Node n = head;
+        n = n.getNext();
+        n = n.getNext();
+        return n;
+    }
+
+    public Node get_other_second(){
+        Node n = head;
+        Node n2 = head;
+        n = n.getNext();
+        while( n.getNext() != null ) {
+            n = n.getNext();
+        }
+        return n2;
+    }
+
     //Returns last Player
     public Player get_last(){
         Node n = get_tail();
-        return n.getContent(); //Why don't we just combine get_last with get_tail? wtf?
+        return n.getContent(); //Why
     }
 
     //Sets next Player of current Player
     public void append(Player p){
-        Node n = get_tail();
-        Node n2 = new Node(p);
-        n.setNext(n2);
+        Node n = get_tail(); //Something about these Nodes is really fucked up...
+        Node n2 = new Node(p); // Why the fuck is a Node treated like a list?
+        n.setNext(n2); //n just gets lost, not appended to any list
+        System.out.println("Player has allegedly been appended. get_last: " + get_last() + " get_second: " +get_second() + " get_first: " + get_first()); //get_first doesn't work
     }
+
+    /*
+    TODO: So... Somehow Dr Wiele managed to forget that nodes created within methods only exist in said method, or I'm just dumb as fuck.
+        Meaning: The list just straight up would never get created because the nodes that get created just cease to exist outside of their methods.
+        We would need to create as many nodes as the user requests. How do we do that? Fuck do I know!
+        PS. Everything makes no sense anymore...The more I study this code the less sense it makes.
+        It's like drinking salt-water to quench one's thirst. The more you consume of it, the worse off you are.
+
+    */
 
     //Prints out the entire List of Nodes/Players
     public void print(){

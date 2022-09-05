@@ -22,12 +22,7 @@ public class Player {
 
     //Builds String from Player information
     public String toString(){
-        String a = name;
-        a += " ";
-        a += Double.toString(value);
-        a += " "; // This is stupid
-        a += team;
-        return a;
+        return "" + name + value + team;
     }
 
     //Sets Player Name

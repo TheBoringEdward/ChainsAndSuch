@@ -148,6 +148,7 @@ public class Transfermarkt extends JFrame{
         t.setResizable(false);
         t.setTitle("Transfermarkt");
         t.setVisible(true);
+        System.out.print("\n\n ======= This code has been provided by TheBoringEdward =======\n");
     }
 
 }
