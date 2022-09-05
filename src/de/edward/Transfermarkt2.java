@@ -1,10 +1,11 @@
 package de.edward;
+
 // The input file should be encoded in ISO-8859-15.
 // The editor kate allows to choose the encoding manually.
 
-// A fully-worked out example for a singly linked list
+// A fully-worked out example for a doubly linked list
 
-// Klaus Wiele August 2022
+// Klaus Wiele September 2022
 
 import java.io.*;
 import java.nio.file.*;
@@ -14,7 +15,7 @@ import java.awt.event.*;
 import javax.swing.*;
 import java.nio.charset.StandardCharsets;
 
-public class Transfermarkt extends JFrame{
+public class Transfermarkt2 extends JFrame{
 
     private List my_list = new List();
     private RandomAccessFile database;
@@ -27,7 +28,7 @@ public class Transfermarkt extends JFrame{
     private JButton JB_clear;
     private JButton JB_save;
 
-    Transfermarkt(){
+    Transfermarkt2(){
 
         // set up the text fields
         JTF_name = new JTextField("name");
@@ -63,8 +64,8 @@ public class Transfermarkt extends JFrame{
                 String name = JTF_name.getText();
                 double value = -1.;
                 try{
-                    value = Double.parseDouble( JTF_value.getText() );
-                }catch( NumberFormatException nfe ){
+                    value = Double.valueOf( JTF_value.getText() );
+                }catch( NumberFormatException nf ){
                     JTA_output.setText("I cannot read the player's value.");
                 }
                 String team = JTF_team.getText();
@@ -85,7 +86,7 @@ public class Transfermarkt extends JFrame{
                     database.setLength(0);
                     // write the new data
                     database.writeBytes( my_list.toString() );
-                }catch( IOException ee ){
+                }catch( IOException io ){
                     JTA_output.setText("I cannot save the data.");
                 }
             }
@@ -109,7 +110,7 @@ public class Transfermarkt extends JFrame{
         // open the input file for reading and writing
         try{
             database = new RandomAccessFile("Spielerdaten.dat","rw");
-        }catch( FileNotFoundException e ){
+        }catch( FileNotFoundException fnf ){
             System.out.println("\n File not found.\n\n");
             JTA_output.setText("I cannot find the input file.");
         }
@@ -128,7 +129,7 @@ public class Transfermarkt extends JFrame{
                 }
                 team = database.readLine();
                 database.readLine();
-            }catch( IOException e ){
+            }catch( IOException io ){
                 System.out.println("\n\n Error reading the data file.\n\n");
                 JTA_output.setText("Error reading the data file.");
             }
@@ -143,12 +144,11 @@ public class Transfermarkt extends JFrame{
     } // end of constructor
 
     public static void main(String [] args){
-        Transfermarkt t = new Transfermarkt();
+        Transfermarkt2 t = new Transfermarkt2();
         t.setSize(600,600);
         t.setResizable(false);
         t.setTitle("Transfermarkt");
         t.setVisible(true);
-        System.out.print("\n\n ======= This code has been provided by TheBoringEdward =======\n");
     }
 
 }
