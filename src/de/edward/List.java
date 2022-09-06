@@ -52,10 +52,10 @@ public class List {
             n = n.getNext();
         }
         while(n.getNext() != null){
-            a.append("\n").append(n);
+            a.append(n.toString());
             n = n.getNext();
         }
-        a.append("\n").append(n);
+        a.append(n.toString());
         return a.toString();
     }
 

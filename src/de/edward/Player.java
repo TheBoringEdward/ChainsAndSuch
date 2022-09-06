@@ -22,7 +22,7 @@ public class Player {
 
     //Builds String from Player information
     public String toString(){
-        return "" + name + value + team;
+        return name + "\n" + value + "\n" + team + "\n\n";
     }
 
     //Sets Player Name

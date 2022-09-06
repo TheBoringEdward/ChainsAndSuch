@@ -1,4 +1,5 @@
 package de.edward;
+
 // The input file should be encoded in ISO-8859-15.
 // The editor kate allows to choose the encoding manually.
 
@@ -148,7 +149,7 @@ public class Transfermarkt extends JFrame{
         t.setResizable(false);
         t.setTitle("Transfermarkt");
         t.setVisible(true);
-        System.out.print("\n\n ======= This code has been provided by TheBoringEdward =======\n");
+        System.out.print("\n\n ======= This code has been partially provided by TheBoringEdward =======\n");
     }
 
 }

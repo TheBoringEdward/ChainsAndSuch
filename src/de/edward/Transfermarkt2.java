@@ -147,8 +147,10 @@ public class Transfermarkt2 extends JFrame{
         Transfermarkt2 t = new Transfermarkt2();
         t.setSize(600,600);
         t.setResizable(false);
-        t.setTitle("Transfermarkt");
+        t.setTitle("Transfermarkt2");
         t.setVisible(true);
+        System.out.println("\n\n ======= Transfermarkt2 =======\n");
+        System.out.println("\n\n ======= This code has been partially provided by TheBoringEdward =======\n");
     }
 
 }
