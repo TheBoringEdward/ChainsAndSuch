@@ -1,6 +1,6 @@
 package de.edward;
 
-// The input file should be encoded in ISO-8859-15.
+//TODO: The input file should be encoded in ISO-8859-15.
 // The editor kate allows to choose the encoding manually.
 
 // A fully-worked out example for a doubly linked list
