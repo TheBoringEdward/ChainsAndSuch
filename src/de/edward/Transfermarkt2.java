@@ -3,6 +3,8 @@ package de.edward;
 //TODO: The input file should be encoded in ISO-8859-15.
 // The editor kate allows to choose the encoding manually.
 
+//Didn't work
+
 // A fully-worked out example for a doubly linked list
 
 // Klaus Wiele September 2022
